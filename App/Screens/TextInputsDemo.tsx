@@ -1,7 +1,7 @@
 import { View, StyleSheet } from 'react-native';
 import React, { useState } from 'react';
-import { ScaleSize } from '../Helper';
-import { CustomTextInput } from '../Components';
+import { ScaleSize } from '../helper';
+import { CustomTextInput } from '../components';
 
 const TextInputsDemo = () => {
   const [date, setDate] = useState(new Date());

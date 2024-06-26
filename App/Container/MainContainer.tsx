@@ -1,6 +1,6 @@
 import { Dimensions, StyleSheet, View, Text } from 'react-native'
 import React from 'react'
-import Loader from '../Components/ReduxComponent/Loader'
+import Loader from '../components/ReduxComponent/Loader'
 
 const { width, height } = Dimensions.get('window')
 

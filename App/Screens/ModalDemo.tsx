@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Button, TouchableOpacity, Text, StyleSheet } from 'react-native';
-import CustomModal from '../Components/BaseComponent/CustomModal';
-import { AppFonts, Colors, ScaleFonts, ScaleSize } from '../Helper';
+import CustomModal from '../components/BaseComponent/CustomModal';
+import { AppFonts, Colors, ScaleFonts, ScaleSize } from '../helper';
 
 const ModalDemo = () => {
   const [modalVisible, setModalVisible] = useState(false);

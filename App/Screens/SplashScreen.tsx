@@ -1,6 +1,6 @@
 import { View, Text, StyleSheet } from 'react-native'
 import React, { useEffect } from 'react'
-import { Colors, ScaleFonts, ScaleSize } from '../Helper'
+import { Colors, ScaleFonts, ScaleSize } from '../helper'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 
 const SplashScreen = ({ navigation }: { navigation: any }) => {

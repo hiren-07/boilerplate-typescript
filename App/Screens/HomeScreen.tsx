@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet } from 'react-native'
 import React from 'react'
-import { Button } from '../Components'
-import { ScaleSize } from '../Helper'
+import { Button } from '../components'
+import { ScaleSize } from '../helper'
 
 const HomeScreen = ({navigation}) => {
 

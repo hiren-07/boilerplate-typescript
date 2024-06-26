@@ -1,6 +1,6 @@
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
 import React from 'react'
-import { AppFonts, Colors, ScaleFonts, ScaleSize } from '../../Helper'
+import { AppFonts, Colors, ScaleFonts, ScaleSize } from '../../helper'
 
 const Button = (props) => {
   return (

@@ -1,10 +1,10 @@
 import { View, Text, StyleSheet } from 'react-native'
 import React, { useRef, useState } from 'react'
-import { Colors, AppFonts, Strings, ScaleFonts, ScaleSize } from '../Helper'
-import { CustomTextInput, Button } from '../Components'
-import Utils from '../Helper/Utils'
+import { Colors, AppFonts, Strings, ScaleFonts, ScaleSize } from '../helper'
+import { CustomTextInput, Button } from '../components'
+import Utils from '../helper/Utils'
 import { useDispatch } from 'react-redux'
-import { forgotPasswordAction } from '../Redux/Action/AuthActions'
+import { forgotPasswordAction } from '../redux/Action/AuthActions'
 import LinearGradient from 'react-native-linear-gradient'
 
 

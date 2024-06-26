@@ -1,7 +1,7 @@
 import React from 'react'
 import { Provider } from 'react-redux'
-import store from './App/Redux/Store'
-import Root from './App/Navigator/Root'
+import store from './app/redux/Store'
+import Root from './app/navigator/Root'
 
 const App = () => {
   return (

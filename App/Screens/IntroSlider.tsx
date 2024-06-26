@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import AppIntroSlider from 'react-native-app-intro-slider';
-import { AppFonts, Colors, ScaleSize } from '../Helper';
+import { AppFonts, Colors, ScaleSize } from '../helper';
 
 const data = [
     {

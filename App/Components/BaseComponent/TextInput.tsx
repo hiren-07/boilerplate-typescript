@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet, TextInput, Pressable, Platform, Modal, TouchableOpacity } from 'react-native';
 import React, { forwardRef, useState } from 'react';
 import DateTimePicker from '@react-native-community/datetimepicker';
-import { Colors, AppFonts, ScaleFonts, ScaleSize } from '../../Helper';
+import { Colors, AppFonts, ScaleFonts, ScaleSize } from '../../helper';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import moment from 'moment';
 

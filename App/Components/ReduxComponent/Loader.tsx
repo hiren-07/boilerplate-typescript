@@ -1,6 +1,6 @@
 import { View, Text, StyleSheet, Modal, ActivityIndicator } from 'react-native'
 import React from 'react'
-import { Colors, ScaleSize } from '../../Helper'
+import { Colors, ScaleSize } from '../../helper'
 import { useSelector } from 'react-redux'
 
 const Loader = (props:any) => {
