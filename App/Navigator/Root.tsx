@@ -1,5 +1,5 @@
 import { NavigationContainer } from "@react-navigation/native";
-import MainContainer from "../Container/MainContainer";
+import MainContainer from "../container/MainContainer";
 import Navigator from "./Navigator";
 
 export default Root =()=>{

@@ -2,14 +2,14 @@ import { View, Text } from 'react-native'
 import React from 'react'
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import SplashScreen from '../Screens/SplashScreen';
-import LoginScreen from '../Screens/LoginScreen';
-import SignUpScreen from '../Screens/SignUpScreen';
-import ForgotPassword from '../Screens/ForgotPassword';
-import IntroScreen from '../Screens/IntroSlider';
-import HomeScreen from '../Screens/HomeScreen';
-import TextInputsDemo from '../Screens/TextInputsDemo';
-import ModalDemo from '../Screens/ModalDemo';
+import SplashScreen from '../screens/SplashScreen';
+import LoginScreen from '../screens/LoginScreen';
+import SignUpScreen from '../screens/SignUpScreen';
+import ForgotPassword from '../screens/ForgotPassword';
+import IntroScreen from '../screens/IntroSlider';
+import HomeScreen from '../screens/HomeScreen';
+import TextInputsDemo from '../screens/TextInputsDemo';
+import ModalDemo from '../screens/ModalDemo';
 
 const Stack = createNativeStackNavigator()
 const Navigator = () => {
