@@ -18,11 +18,11 @@ const ModalDemo = () => {
         visible={modalVisible}
         headerText="Header Text"
         title="Title Text"
-        description="This is the description text of the modalThis is the description text of the modalThis is the description text of the modalThis is the description text of the modalThis is the description text of the modalThis is the description text of the modalThis is the description text of the modalThis is the description text of the modal."
+        description="This is the description text of the modalThis is the description text of the modalThis is the description text of the modalThis is the description text of the modalThis is the description text of the modalThis is"
         buttons={[
           { text: 'Cancel', onClick: () => setModalVisible(false) },
           { text: 'OK', onClick: () => setModalVisible(false) },
-         
+
         ]}
         onRequestClose={() => setModalVisible(false)}
       />

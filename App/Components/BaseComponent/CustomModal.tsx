@@ -1,9 +1,9 @@
 import React from 'react';
 import { Modal, View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { AppFonts, Colors, ScaleFonts, ScaleSize } from '../../helper';
 
 const CustomModal = (props:any) => {
-  console.log("Props -> ",props);
-  
+ 
   return (
     <Modal
       transparent={true}
@@ -20,7 +20,7 @@ const CustomModal = (props:any) => {
             {props.buttons.map((button, index) => (
               <TouchableOpacity 
                 key={index} 
-                style={[styles.button, { backgroundColor: '#2196F3' }]}
+                style={[styles.button]}
                 onPress={button.onClick}
               >
                 <Text style={styles.buttonText}>{button.text}</Text>
@@ -42,38 +42,44 @@ const styles = StyleSheet.create({
   },
   modalContainer: {
     width: '80%',
-    padding: 20,
-    backgroundColor: 'white',
-    borderRadius: 10,
+    padding: ScaleSize.SPACING_20,
+    backgroundColor: Colors.primary,
+    borderRadius: ScaleSize.SPACING_10,
     alignItems: 'center',
   },
   headerText: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    marginBottom: 10
+    fontSize: ScaleFonts.SIZE_20,
+    color: Colors.secondary,
+    fontFamily:AppFonts.Bold,
+    marginBottom: ScaleSize.SPACING_10
   },
   title: {
-    fontSize: 18,
-    fontWeight: '600',
-    marginBottom: 10
+    fontSize: ScaleFonts.SIZE_18,
+    color: Colors.secondary,
+    fontFamily:AppFonts.SemiBold,
+    marginBottom: ScaleSize.SPACING_10,
   },
   description: {
-    fontSize: 16,
+    fontSize: ScaleFonts.SIZE_16,
+    color: Colors.secondary,
     marginBottom: 20
   },
   buttonContainer: {
     flexDirection: 'row',
     justifyContent:'flex-end',
+    width:'100%'
   },
   button: {
-    flex: 1,
+    // flex: 1,
     padding: 10,
+    alignItems:'flex-end',
     marginHorizontal: 5,
     borderRadius: 5,
-    alignItems: 'center'
+    // alignItems: 'center'
   },
   buttonText: {
-    color: 'white',
+    fontSize:ScaleFonts.SIZE_16,
+    color: Colors.secondary,
     fontWeight: 'bold'
   }
 });
