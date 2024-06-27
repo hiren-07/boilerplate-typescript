@@ -1,12 +1,13 @@
 import { View, Text, StyleSheet, TextInput, Pressable, Platform, Modal, TouchableOpacity } from 'react-native';
 import React, { forwardRef, useState } from 'react';
 import DateTimePicker from '@react-native-community/datetimepicker';
-import { Colors, AppFonts, ScaleFonts, ScaleSize } from '../../helper';
+import { Colors, AppFonts, ScaleFonts, ScaleSize, Constants } from '../../helper';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import moment from 'moment';
 
+
 const CustomTextInput = forwardRef((props: any, ref) => {
-  const type = props.type;
+  const {line, border, type} = props
 
   const [visible, setVisible] = useState<boolean>(false);
   const [currentDate, setCurrentDate] = useState(new Date());
@@ -41,16 +42,21 @@ const CustomTextInput = forwardRef((props: any, ref) => {
       fontSize: ScaleFonts.SIZE_16,
       color: Colors.secondary,
       fontFamily: AppFonts.Medium,
-      paddingLeft: props.icon ? 0 : ScaleSize.SPACING_15,
+      paddingLeft: props.leftIcon ? 0 : ScaleSize.SPACING_15,
     },
     inputType1: {
       borderBottomWidth: 1,
+      overflow:'hidden',
+      borderColor: Colors.inputBorderColor
     },
     inputType2: {
       borderWidth: 1,
+      borderRadius: ScaleSize.SPACING_30,
+      overflow:'hidden',
+      borderColor:Colors.inputBorderColor
     },
     errorText: {
-      color: '#FF6868',
+      color: Colors.errorText,
       paddingLeft: ScaleSize.SPACING_10,
     },
     leftIconView: {
@@ -96,34 +102,45 @@ const CustomTextInput = forwardRef((props: any, ref) => {
   });
 
   let inputStyle;
-  if (type == 1) {
+  if (line) {
     inputStyle = [styles.viewIconIncluded, styles.inputType1];
-  } else if (type == 2 || type == 3 || type == 4 || type == 5 || type == 6 || type == 7) {
+  } else if (border) {
     inputStyle = [styles.viewIconIncluded, styles.inputType2];
   } else {
     inputStyle = styles.viewIconIncluded;
   }
 
+  const handlePress = ()=>{
+    if(type==Constants.INPUT.DATE){
+       setShowPicker(true)
+    }else if(type==Constants.INPUT.DROPDOWN){
+      setModalVisible(true)
+    }else{
+      console.log("123");
+      
+    }
+  }
+
   return (
-    <View style={styles.inputView}>
+    <TouchableOpacity style={styles.inputView} onPress={()=>handlePress()}>
       <View style={inputStyle}>
-        {props.icon && (
+        {props.leftIcon && (
           <View style={styles.leftIconView}>
             <MaterialCommunityIcons
-              name={props.icon}
+              name={props.leftIcon}
               color={Colors.secondary}
               size={ScaleSize.SPACING_20}
             />
           </View>
         )}
 
-        {type == 6 ? (
+        {type == Constants.INPUT.DATE ? (
           <>
-            <Pressable onPress={() => setShowPicker(true)} style={styles.inputCommon}>
+            <View  style={styles.inputCommon}>
               <Text style={styles.dateText}>
                 {moment(date).format('LL')}
               </Text>
-            </Pressable>
+            </View>
             {showPicker && (
               <DateTimePicker
                 value={date}
@@ -133,13 +150,13 @@ const CustomTextInput = forwardRef((props: any, ref) => {
               />
             )}
           </>
-        ) : type == 7 ? (
+        ) : type == Constants.INPUT.DROPDOWN ? (
           <>
-            <Pressable onPress={() => setModalVisible(true)} style={styles.inputCommon}>
+            <View  style={styles.inputCommon}>
               <Text style={styles.dateText}>
                 Open Modal
               </Text>
-            </Pressable>
+            </View>
             <Modal
               transparent={true}
               visible={modalVisible}
@@ -201,7 +218,7 @@ const CustomTextInput = forwardRef((props: any, ref) => {
         )}
       </View>
       {props.error ? <Text style={styles.errorText}>{props.error}</Text> : null}
-    </View>
+    </TouchableOpacity>
   );
 });
 

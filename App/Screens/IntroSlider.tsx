@@ -1,7 +1,7 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import AppIntroSlider from 'react-native-app-intro-slider';
-import { AppFonts, Colors, ScaleSize } from '../helper';
+import { AppFonts, Colors, ScaleFonts, ScaleSize } from '../helper';
 
 const data = [
     {
@@ -24,29 +24,55 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: Colors.primary,
-        paddingHorizontal:ScaleSize.SPACING_50
+        paddingHorizontal: ScaleSize.SPACING_50,
     },
     text: {
         color: Colors.secondary,
         textAlign: 'center',
-        fontFamily:AppFonts.Regular
+        fontFamily: AppFonts.Regular,
     },
     title: {
-        fontSize: 22,
+        fontSize: ScaleFonts.SIZE_22,
         color: Colors.secondary,
         textAlign: 'center',
-        fontFamily:AppFonts.Regular
+        fontFamily: AppFonts.Regular,
+    },
+    buttonText: {
+        fontSize: ScaleFonts.SIZE_16,
+        color: Colors.secondary,
+        fontFamily: AppFonts.Medium,
+    },
+    button: {
+        padding: ScaleSize.SPACING_10,
     },
 });
 
 const IntroScreen = ({ navigation }: { navigation: any }) => {
 
-    const gotoLogin = () => { navigation.replace('login') }
+    const gotoLogin = () => { navigation.replace('login'); }
 
     const renderItem = ({ item }: { item: any }) => (
-        <View style={[styles.slide]}>
+        <View style={styles.slide}>
             <Text style={styles.title}>{item.title}</Text>
             <Text style={styles.text}>{item.text}</Text>
+        </View>
+    );
+
+    const renderNextButton = () => (
+        <View style={styles.button}>
+            <Text style={styles.buttonText}>Next</Text>
+        </View>
+    );
+
+    const renderSkipButton = () => (
+        <View style={styles.button}>
+            <Text style={styles.buttonText}>Skip</Text>
+        </View>
+    );
+
+    const renderDoneButton = () => (
+        <View style={styles.button}>
+            <Text style={styles.buttonText}>Done</Text>
         </View>
     );
 
@@ -55,6 +81,9 @@ const IntroScreen = ({ navigation }: { navigation: any }) => {
             <AppIntroSlider
                 data={data}
                 renderItem={renderItem}
+                renderNextButton={renderNextButton}
+                renderSkipButton={renderSkipButton}
+                renderDoneButton={renderDoneButton}
                 showSkipButton={true}
                 dotStyle={{ backgroundColor: Colors.secondary }}
                 activeDotStyle={{ backgroundColor: Colors.ButtonBackground }}

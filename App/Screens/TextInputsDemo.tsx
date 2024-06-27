@@ -1,6 +1,6 @@
 import { View, StyleSheet } from 'react-native';
 import React, { useState } from 'react';
-import { ScaleSize } from '../helper';
+import { Constants, ScaleSize } from '../helper';
 import { CustomTextInput } from '../components';
 
 const TextInputsDemo = () => {
@@ -8,14 +8,14 @@ const TextInputsDemo = () => {
 
   return (
     <View style={styles.container}>
-      <CustomTextInput type='1' />
-      <CustomTextInput type='2' />
-      <CustomTextInput type='3' icon='account-alert' />
-      <CustomTextInput type='4' secureTextEntry={true} ispassword={true} />
-      <CustomTextInput type='5' rightIcon='close-thick' />
-      <CustomTextInput type='6' icon='calendar-month' date={date} onChangeDate={setDate} />
-      <CustomTextInput type='6' rightIcon='calendar-today' icon='calendar-month' date={date} onChangeDate={setDate} />
-      <CustomTextInput type='7' rightIcon='chevron-double-down' />
+      <CustomTextInput type={Constants.INPUT.TEXT} line={true} rightIcon='close-thick' leftIcon='account-alert'/>
+      <CustomTextInput type={Constants.INPUT.TEXT} border={true} />
+      <CustomTextInput type={Constants.INPUT.TEXT} border={true} leftIcon='account-alert' />
+      <CustomTextInput type={Constants.INPUT.TEXT} border={true} secureTextEntry={true} ispassword={true} />
+      <CustomTextInput type={Constants.INPUT.TEXT} border={true} rightIcon='close-thick' />
+      <CustomTextInput type={Constants.INPUT.DATE} border={true} leftIcon='calendar-month' date={date} onChangeDate={setDate} />
+      <CustomTextInput type={Constants.INPUT.DATE} border={true} rightIcon='calendar-today' leftIcon='calendar-month' date={date} onChangeDate={setDate} />
+      <CustomTextInput type={Constants.INPUT.DROPDOWN} rightIcon='chevron-double-down' /> 
     </View>
   );
 };

@@ -11,10 +11,13 @@
 export const Colors = {
     primary: '#ededed',
     secondary: 'black',
-    textInputBackground: '#AFE1AF',
+    inputBorderColor: "#ddd",
+    borderColor:"#A2A2A2",
+    textInputBackground: "#fff",
     ButtonBackground: '#00A050',
     placeholderColor : '#808080',
     gradiant1: '#78ffd6',
     gradiant2: '#a8ff78',
     gradiant3: 'white',
+    errorText: '#FF6868',
 }

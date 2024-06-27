@@ -26,21 +26,22 @@ const LoginScreen = ({ navigation }: { navigation: any }) => {
             setEmailError('Invalid Email Address')
         }
 
-        if(isValid){
-            const body = {email:email}
-            dispatch(forgotPasswordAction(body,navigation))
+        if (isValid) {
+            const body = { email: email }
+            dispatch(forgotPasswordAction(body, navigation))
         }
     }
 
 
     return (
-        <LinearGradient colors={[Colors.gradiant1, Colors.gradiant2,Colors.gradiant3 ]} style={styles.container}>
+        <LinearGradient colors={[Colors.gradiant1, Colors.gradiant2, Colors.gradiant3]} style={styles.container}>
 
             <Text style={styles.signIn}>{Strings.str_forgot_password_title}</Text>
 
             <Text style={styles.description}>{Strings.str_description}</Text>
 
             <CustomTextInput
+                border={true}
                 placeholder={Strings.str_mail_id}
                 enterKeyHint='done'
                 onChangeText={(text: any) => { setEmail(text), setEmailError(false) }}

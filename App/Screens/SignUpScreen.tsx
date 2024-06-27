@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet , Alert } from 'react-native'
+import { View, Text, StyleSheet, Alert } from 'react-native'
 import React, { useRef, useState } from 'react'
 import { Colors, AppFonts, Strings, ScaleFonts, ScaleSize } from '../helper'
 import { CustomTextInput, Button } from '../components'
@@ -75,11 +75,12 @@ const LoginScreen = ({ navigation }: { navigation: any }) => {
 
 
   return (
-    <LinearGradient colors={[Colors.gradiant1, Colors.gradiant2,Colors.gradiant3 ]} style={styles.container}>
+    <LinearGradient colors={[Colors.gradiant1, Colors.gradiant2, Colors.gradiant3]} style={styles.container}>
 
       <Text style={styles.signIn}>{Strings.str_signup}</Text>
 
       <CustomTextInput
+        border={true}
         placeholder={Strings.str_username}
         enterKeyHint='next'
         onChangeText={(text: any) => { setUsername(text), setUserError(false) }}
@@ -91,6 +92,7 @@ const LoginScreen = ({ navigation }: { navigation: any }) => {
       />
 
       <CustomTextInput
+        border={true}
         placeholder={Strings.str_mail_id}
         keyboardType='email-address'
         enterKeyHint='next'
@@ -104,6 +106,7 @@ const LoginScreen = ({ navigation }: { navigation: any }) => {
       />
 
       <CustomTextInput
+        border={true}
         placeholder={Strings.str_mobile_number}
         keyboardType='number-pad'
         enterKeyHint='next'
@@ -117,6 +120,7 @@ const LoginScreen = ({ navigation }: { navigation: any }) => {
       />
 
       <CustomTextInput
+        border={true}
         placeholder={Strings.str_password}
         enterKeyHint='done'
         secureTextEntry={true}

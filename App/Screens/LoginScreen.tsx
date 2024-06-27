@@ -45,12 +45,13 @@ const LoginScreen = ({ navigation }: { navigation: any }) => {
       dispatch(authLoginAction(body, navigation))
     }
   };
- 
+
   return (
-    <LinearGradient colors={[Colors.gradiant1, Colors.gradiant2,Colors.gradiant3 ]} style={styles.container}>
+    <LinearGradient colors={[Colors.gradiant1, Colors.gradiant2, Colors.gradiant3]} style={styles.container}>
       <Text style={styles.signIn}>{Strings.str_sign_in}</Text>
 
       <CustomTextInput
+        border={true}
         placeholder={Strings.str_username}
         enterKeyHint='next'
         onChangeText={(text: any) => {
@@ -64,6 +65,7 @@ const LoginScreen = ({ navigation }: { navigation: any }) => {
       />
 
       <CustomTextInput
+        border={true}
         placeholder={Strings.str_password}
         enterKeyHint='done'
         secureTextEntry={true}
