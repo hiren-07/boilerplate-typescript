@@ -117,13 +117,12 @@ const CustomTextInput = forwardRef((props: any, ref) => {
       setModalVisible(true)
     }else{
       console.log("123");
-      
     }
   }
 
   return (
-    <TouchableOpacity style={styles.inputView} onPress={()=>handlePress()}>
-      <View style={inputStyle}>
+    <View style={styles.inputView}>
+      <TouchableOpacity style={inputStyle} onPress={()=>handlePress()}>
         {props.leftIcon && (
           <View style={styles.leftIconView}>
             <MaterialCommunityIcons
@@ -165,10 +164,7 @@ const CustomTextInput = forwardRef((props: any, ref) => {
               <View style={styles.modalContainer}>
                 <View style={styles.modalContent}>
                   <Text style={styles.modalText}>This is a modal!</Text>
-                  <TouchableOpacity
-                    style={styles.closeButton}
-                    onPress={() => setModalVisible(false)}
-                  >
+                  <TouchableOpacity style={styles.closeButton} onPress={() => setModalVisible(false)}>
                     <Text style={styles.closeButtonText}>Close</Text>
                   </TouchableOpacity>
                 </View>
@@ -216,9 +212,9 @@ const CustomTextInput = forwardRef((props: any, ref) => {
             />
           </Pressable>
         )}
-      </View>
+      </TouchableOpacity>
       {props.error ? <Text style={styles.errorText}>{props.error}</Text> : null}
-    </TouchableOpacity>
+    </View>
   );
 });
 
