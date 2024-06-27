@@ -2,7 +2,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import MainContainer from "../container/MainContainer";
 import Navigator from "./Navigator";
 
-export default Root =()=>{
+const Root =()=>{
     return(
         <NavigationContainer>
             <Navigator />
@@ -10,3 +10,5 @@ export default Root =()=>{
         </NavigationContainer>
     )
 }
+
+export default Root
