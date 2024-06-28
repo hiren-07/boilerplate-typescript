@@ -57,7 +57,7 @@ const CustomTextInput = forwardRef((props: any, ref) => {
     },
     errorText: {
       color: Colors.errorText,
-      paddingLeft: ScaleSize.SPACING_10,
+      paddingLeft: ScaleSize.SPACING_20,
     },
     leftIconView: {
       justifyContent: 'center',
