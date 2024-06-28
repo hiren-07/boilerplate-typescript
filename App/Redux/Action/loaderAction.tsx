@@ -1,4 +1,4 @@
-import { LOADER } from "../Constant";
+import { LOADER } from "../constant";
 export const loader = (dispatch:any,state:any) => dispatch({
     type: LOADER,
     state:state

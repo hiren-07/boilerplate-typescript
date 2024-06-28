@@ -1,4 +1,4 @@
-import Button from "./BaseComponent/Button";
-import CustomTextInput from "./BaseComponent/TextInput";
+import Button from "./baseComponent/Button";
+import CustomTextInput from "./baseComponent/TextInput";
 
 export {Button,CustomTextInput}

@@ -4,7 +4,7 @@ import { Button } from '../components'
 import { ScaleSize } from '../helper'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import { CommonActions } from '@react-navigation/native';
-import { loader } from '../redux/Action/loaderAction'
+import { loader } from '../redux/action/loaderAction'
 import { useDispatch } from 'react-redux'
 
 

@@ -4,9 +4,7 @@ import { Colors, AppFonts, Strings, ScaleFonts, ScaleSize } from '../helper';
 import { CustomTextInput, Button } from '../components';
 import Utils from '../helper/Utils';
 import { useDispatch, useSelector } from 'react-redux';
-import { authLoginAction } from '../redux/Action/AuthActions';
-import Loader from '../components/ReduxComponent/Loader';
-import { LOADER_SHOW, LOADER_HIDE } from '../redux/Action/loaderAction';
+import { authLoginAction } from '../redux/action/authActions';
 import LinearGradient from 'react-native-linear-gradient';
 
 const LoginScreen = ({ navigation }: { navigation: any }) => {

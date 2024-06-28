@@ -1,8 +1,8 @@
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
 import React from 'react'
+import { Text, TouchableOpacity, StyleSheet } from 'react-native'
 import { AppFonts, Colors, ScaleFonts, ScaleSize } from '../../helper'
 
-const Button = (props) => {
+const Button = (props:any) => {
   return (
     <TouchableOpacity onPress={props.onPress} style={style.buttonView}>
       <Text style={style.buttonText}>{props.title}</Text>

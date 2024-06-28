@@ -1,4 +1,4 @@
-import { FETCH_DATA_REQUEST,FETCH_DATA_FAILURE,FETCH_DATA_SUCCESS } from "../Constant";
+import { FETCH_DATA_REQUEST,FETCH_DATA_FAILURE,FETCH_DATA_SUCCESS } from "../constant";
 
 const initialState = {
     page : 1,

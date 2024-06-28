@@ -1,4 +1,4 @@
-import { LOADER } from "../Constant";
+import { LOADER } from "../constant";
 
 export const loader = (state = false, action:any) => {
     switch (action.type) {

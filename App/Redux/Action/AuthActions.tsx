@@ -1,5 +1,5 @@
 import { Alert } from "react-native";
-import { FORGOT_PASSWORD_FAILURE, FORGOT_PASSWORD_RQUEST, FORGOT_PASSWORD_SUCCESS, LOGIN_FAILURE, LOGIN_REQUST, LOGIN_SUCCESS, SIGN_UP_FAILURE, SIGN_UP_REQUEST, SIGN_UP_SUCCESS } from "../Constant"
+import { FORGOT_PASSWORD_FAILURE, FORGOT_PASSWORD_RQUEST, FORGOT_PASSWORD_SUCCESS, LOGIN_FAILURE, LOGIN_REQUST, LOGIN_SUCCESS, SIGN_UP_FAILURE, SIGN_UP_REQUEST, SIGN_UP_SUCCESS } from "../constant"
 import { loader } from "./loaderAction";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { CommonActions } from '@react-navigation/native';

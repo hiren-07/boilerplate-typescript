@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet } from 'react-native'
 import React, { useEffect } from 'react'
 import { useDispatch,useSelector } from 'react-redux'
-import { fetchDataAction } from '../redux/Action/fetchDataAction'
+import { fetchDataAction } from '../redux/action/fetchDataAction'
 
 const DataRenderingDemo = () => {
 

@@ -4,7 +4,7 @@ import { Colors, AppFonts, Strings, ScaleFonts, ScaleSize } from '../helper'
 import { CustomTextInput, Button } from '../components'
 import Utils from '../helper/Utils'
 import { useDispatch } from 'react-redux'
-import { forgotPasswordAction } from '../redux/Action/AuthActions'
+import { forgotPasswordAction } from '../redux/action/authActions'
 import LinearGradient from 'react-native-linear-gradient'
 
 

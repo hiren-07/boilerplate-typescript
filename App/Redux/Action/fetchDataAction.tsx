@@ -1,4 +1,4 @@
-import { FETCH_DATA_REQUEST,FETCH_DATA_FAILURE,FETCH_DATA_SUCCESS } from "../Constant";
+import { FETCH_DATA_REQUEST,FETCH_DATA_FAILURE,FETCH_DATA_SUCCESS } from "../constant";
 
 export const fetchDataAction = (page:number)=>{
     return (dispatch: (arg0: { type: string; }) => void) => {
