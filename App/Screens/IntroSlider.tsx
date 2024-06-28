@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import AppIntroSlider from 'react-native-app-intro-slider';
 import { AppFonts, Colors, ScaleFonts, ScaleSize } from '../helper';
 
@@ -58,21 +58,9 @@ const IntroScreen = ({ navigation }: { navigation: any }) => {
         </View>
     );
 
-    const renderNextButton = () => (
+    const renderButton = (text: string) => (
         <View style={styles.button}>
-            <Text style={styles.buttonText}>Next</Text>
-        </View>
-    );
-
-    const renderSkipButton = () => (
-        <View style={styles.button}>
-            <Text style={styles.buttonText}>Skip</Text>
-        </View>
-    );
-
-    const renderDoneButton = () => (
-        <View style={styles.button}>
-            <Text style={styles.buttonText}>Done</Text>
+            <Text style={styles.buttonText}>{text}</Text>
         </View>
     );
 
@@ -81,9 +69,9 @@ const IntroScreen = ({ navigation }: { navigation: any }) => {
             <AppIntroSlider
                 data={data}
                 renderItem={renderItem}
-                renderNextButton={renderNextButton}
-                renderSkipButton={renderSkipButton}
-                renderDoneButton={renderDoneButton}
+                renderNextButton={() => renderButton('Next')}
+                renderSkipButton={() => renderButton('Skip')}
+                renderDoneButton={() => renderButton('Done')}
                 showSkipButton={true}
                 dotStyle={{ backgroundColor: Colors.secondary }}
                 activeDotStyle={{ backgroundColor: Colors.ButtonBackground }}
