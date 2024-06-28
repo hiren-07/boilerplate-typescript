@@ -7,7 +7,7 @@ import moment from 'moment';
 
 
 const CustomTextInput = forwardRef((props: any, ref) => {
-  const {line, border, type} = props
+  const { line, border, type } = props
 
   const [visible, setVisible] = useState<boolean>(false);
   const [currentDate, setCurrentDate] = useState(new Date());
@@ -46,14 +46,14 @@ const CustomTextInput = forwardRef((props: any, ref) => {
     },
     inputType1: {
       borderBottomWidth: 1,
-      overflow:'hidden',
+      overflow: 'hidden',
       borderColor: Colors.inputBorderColor
     },
     inputType2: {
       borderWidth: 1,
       borderRadius: ScaleSize.SPACING_30,
-      overflow:'hidden',
-      borderColor:Colors.inputBorderColor
+      overflow: 'hidden',
+      borderColor: Colors.inputBorderColor
     },
     errorText: {
       color: Colors.errorText,
@@ -110,19 +110,19 @@ const CustomTextInput = forwardRef((props: any, ref) => {
     inputStyle = styles.viewIconIncluded;
   }
 
-  const handlePress = ()=>{
-    if(type==Constants.INPUT.DATE){
-       setShowPicker(true)
-    }else if(type==Constants.INPUT.DROPDOWN){
+  const handlePress = () => {
+    if (type == Constants.INPUT.DATE) {
+      setShowPicker(true)
+    } else if (type == Constants.INPUT.DROPDOWN) {
       setModalVisible(true)
-    }else{
+    } else {
       console.log("123");
     }
   }
 
   return (
     <View style={styles.inputView}>
-      <TouchableOpacity style={inputStyle} onPress={()=>handlePress()}>
+      <TouchableOpacity style={inputStyle} onPress={() => handlePress()}>
         {props.leftIcon && (
           <View style={styles.leftIconView}>
             <MaterialCommunityIcons
@@ -135,7 +135,7 @@ const CustomTextInput = forwardRef((props: any, ref) => {
 
         {type == Constants.INPUT.DATE ? (
           <>
-            <View  style={styles.inputCommon}>
+            <View style={styles.inputCommon}>
               <Text style={styles.dateText}>
                 {moment(date).format('LL')}
               </Text>
@@ -151,7 +151,7 @@ const CustomTextInput = forwardRef((props: any, ref) => {
           </>
         ) : type == Constants.INPUT.DROPDOWN ? (
           <>
-            <View  style={styles.inputCommon}>
+            <View style={styles.inputCommon}>
               <Text style={styles.dateText}>
                 Open Modal
               </Text>
