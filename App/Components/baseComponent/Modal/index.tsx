@@ -1,8 +1,9 @@
 import React from 'react';
 import { Modal, View, Text, TouchableOpacity } from 'react-native';
 import { styles } from './style';
+import { iModal } from './iModal';
 
-const CustomModal = (props:any) => {
+const CustomModal = (props:iModal) => {
   return (
     <Modal
       transparent={true}

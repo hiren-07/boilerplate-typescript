@@ -13,20 +13,24 @@ const LoginScreen = ({ navigation }: { navigation: any }) => {
 
   const dispatch = useDispatch()
 
-  const [username, setUsername] = useState('')
-  const [email, setEmail] = useState('')
-  const [mobile, setMobile] = useState('')
-  const [password, setPassword] = useState('')
+  interface renfrence{
+    ref : any
+  }
+  
+  const [username, setUsername] = useState<string>('')
+  const [email, setEmail] = useState<string>('')
+  const [mobile, setMobile] = useState<string>('')
+  const [password, setPassword] = useState<string>('')
 
-  const nameRef = useRef<any>(null)
-  const emailRef = useRef<any>(null)
-  const mobileRef = useRef<any>(null)
-  const passwordRef = useRef<any>(null)
+  const nameRef = useRef<renfrence>(null)
+  const emailRef = useRef<renfrence>(null)
+  const mobileRef = useRef<renfrence>(null)
+  const passwordRef = useRef<renfrence>(null)
 
-  const [userError, setUserError] = useState<any>(false)
-  const [emailError, setEmailError] = useState<any>(false)
-  const [mobileError, setMobileError] = useState<any>(false)
-  const [passError, setPassError] = useState<any>(false)
+  const [userError, setUserError] = useState<string | boolean>(false)
+  const [emailError, setEmailError] = useState<string | boolean>(false)
+  const [mobileError, setMobileError] = useState<string | boolean>(false)
+  const [passError, setPassError] = useState<string | boolean>(false)
 
   const goToSignin = () => {
     navigation.navigate('login')
@@ -86,7 +90,7 @@ const LoginScreen = ({ navigation }: { navigation: any }) => {
         enterKeyHint='next'
         onChangeText={(text: any) => { setUsername(text), setUserError(false) }}
         error={userError}
-        icon='account'
+        leftIcon='account'
         ref={nameRef}
         onSubmitEditing={() => emailRef.current.focus()}
 
@@ -99,7 +103,7 @@ const LoginScreen = ({ navigation }: { navigation: any }) => {
         enterKeyHint='next'
         onChangeText={(text: any) => { setEmail(text), setEmailError(false) }}
         error={emailError}
-        icon='email-outline'
+        leftIcon='email-outline'
         ref={emailRef}
         onSubmitEditing={() => mobileRef.current.focus()}
 
@@ -113,7 +117,7 @@ const LoginScreen = ({ navigation }: { navigation: any }) => {
         enterKeyHint='next'
         onChangeText={(text: any) => { setMobile(text), setMobileError(false) }}
         error={mobileError}
-        icon='phone'
+        leftIcon='phone'
         ref={mobileRef}
         onSubmitEditing={() => passwordRef.current.focus()}
 
@@ -127,7 +131,7 @@ const LoginScreen = ({ navigation }: { navigation: any }) => {
         secureTextEntry={true}
         onChangeText={(text: any) => { setPassword(text), setPassError(false) }}
         error={passError}
-        icon='lock'
+        leftIcon='lock'
         ref={passwordRef}
         onSubmitEditing={() => handleLogin()}
         ispassword={true}

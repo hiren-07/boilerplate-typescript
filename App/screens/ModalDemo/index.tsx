@@ -5,7 +5,7 @@ import { styles } from './style';
 
 const ModalDemo = () => {
 
-  const [modalVisible, setModalVisible] = useState(false);
+  const [modalVisible, setModalVisible] = useState<boolean>(false);
 
   return (
     <View style={styles.container}>

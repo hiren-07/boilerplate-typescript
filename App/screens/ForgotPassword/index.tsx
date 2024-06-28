@@ -47,7 +47,7 @@ const LoginScreen = ({ navigation }: { navigation: any }) => {
                 enterKeyHint='done'
                 onChangeText={(text: any) => { setEmail(text), setEmailError(false) }}
                 error={emailError}
-                icon='email-outline'
+                leftIcon='email-outline'
                 onSubmitEditing={handleForgotPassword}
 
             />

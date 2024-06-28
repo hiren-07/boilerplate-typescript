@@ -30,6 +30,7 @@ const IntroScreen = ({ navigation }: { navigation: any }) => {
         </View>
     );
 
+
     const renderButton = (text: string) => (
         <View style={styles.button}>
             <Text style={styles.buttonText}>{text}</Text>
@@ -41,9 +42,9 @@ const IntroScreen = ({ navigation }: { navigation: any }) => {
             <AppIntroSlider
                 data={data}
                 renderItem={renderItem}
-                renderNextButton={() => renderButton('Next')}
-                renderSkipButton={() => renderButton('Skip')}
-                renderDoneButton={() => renderButton('Done')}
+                renderNextButton={() => renderButton("Next")}
+                renderSkipButton={() => renderButton("Skip")}
+                renderDoneButton={() => renderButton("Done")}
                 showSkipButton={true}
                 dotStyle={{ backgroundColor: Colors.secondary }}
                 activeDotStyle={{ backgroundColor: Colors.ButtonBackground }}

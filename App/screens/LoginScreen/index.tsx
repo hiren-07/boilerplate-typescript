@@ -1,9 +1,9 @@
-import { View, Text, StyleSheet, TouchableOpacity, Keyboard, Alert } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 import React, { useRef, useState } from 'react';
 import { Colors, Strings } from '../../helper';
 import { CustomTextInput, Button } from '../../components';
 import Utils from '../../helper/Utils';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { authLoginAction } from '../../redux/action/authActions';
 import LinearGradient from 'react-native-linear-gradient';
 import { styles } from './style';
@@ -12,8 +12,8 @@ const LoginScreen = ({ navigation }: { navigation: any }) => {
 
   const dispatch = useDispatch()
 
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [username, setUsername] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
   const nameRef = useRef<any>(null);
   const passwordRef = useRef<any>(null);
   const [userError, setUserError] = useState<any>(false);
@@ -53,12 +53,12 @@ const LoginScreen = ({ navigation }: { navigation: any }) => {
         border={true}
         placeholder={Strings.str_username}
         enterKeyHint='next'
-        onChangeText={(text: any) => {
-          setUsername(text);
-          setUserError(false);
+        onChangeText={(text: string) => {
+          setUsername(text)
+          setUserError(false)
         }}
         error={userError}
-        icon='account'
+        leftIcon='account'
         ref={nameRef}
         onSubmitEditing={() => passwordRef.current.focus()}
       />
@@ -68,12 +68,12 @@ const LoginScreen = ({ navigation }: { navigation: any }) => {
         placeholder={Strings.str_password}
         enterKeyHint='done'
         secureTextEntry={true}
-        onChangeText={(text: any) => {
+        onChangeText={(text: string) => {
           setPassword(text);
           setPassError(false);
         }}
         error={passError}
-        icon='lock'
+        leftIcon='lock'
         ref={passwordRef}
         ispassword={true}
         onSubmitEditing={handleLogin}

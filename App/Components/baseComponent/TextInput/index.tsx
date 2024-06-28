@@ -5,13 +5,14 @@ import { Colors, ScaleSize, Constants } from '../../../helper';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import moment from 'moment';
 import { styles } from './style';
+import { iTextInput } from './iTextInput';
 
-const CustomTextInput = forwardRef((props: any, ref) => {
+const CustomTextInput = forwardRef((props: iTextInput, ref) => {
   const { line, border, type } = props
 
   const [visible, setVisible] = useState<boolean>(false);
-  const [currentDate, setCurrentDate] = useState(new Date());
-  const [date, setDate] = useState<any>(new Date());
+  const [currentDate, setCurrentDate] = useState<Date>(new Date());
+  const [date, setDate] = useState<Date>(new Date());
   const [showPicker, setShowPicker] = useState<boolean>(false);
   const [modalVisible, setModalVisible] = useState<boolean>(false);
 
@@ -44,7 +45,6 @@ const CustomTextInput = forwardRef((props: any, ref) => {
   return (
     // <View style={styles.inputView}>
     // marginVertical: props.error ? ScaleSize.SPACING_5 : ScaleSize.SPACING_15,
-
     <View style={props.error ? styles.inputView : styles.inputView1}>
       <TouchableOpacity style={inputStyle} onPress={() => handlePress()}>
         {props.leftIcon && (
