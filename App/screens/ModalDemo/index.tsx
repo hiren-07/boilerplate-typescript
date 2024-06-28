@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import { View, Button, TouchableOpacity, Text, StyleSheet } from 'react-native';
-import { AppFonts, Colors, ScaleFonts, ScaleSize } from '../helper';
-import CustomModal from '../components/baseComponent/CustomModal';
+import { CustomModal } from '../../components';
+import { styles } from './style';
 
 const ModalDemo = () => {
-  const [modalVisible, setModalVisible] = useState(false);
 
-  // const buttons = ;
+  const [modalVisible, setModalVisible] = useState(false);
 
   return (
     <View style={styles.container}>
@@ -30,24 +29,5 @@ const ModalDemo = () => {
   );
 };
 
-const styles = StyleSheet.create({
-  buttonView: {
-    paddingVertical: ScaleSize.SPACING_25 / 2,
-    backgroundColor: Colors.textInputBackground,
-    width: '100%',
-    alignItems: 'center'
-  },
-  text: {
-    fontSize: ScaleFonts.SIZE_16,
-    color: Colors.secondary,
-    fontFamily: AppFonts.Medium,
-  },
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    paddingHorizontal: ScaleSize.SPACING_60
-  },
-})
 
 export default ModalDemo;

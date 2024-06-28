@@ -5,10 +5,10 @@ import LoginScreen from '../screens/LoginScreen';
 import SignUpScreen from '../screens/SignUpScreen';
 import ForgotPassword from '../screens/ForgotPassword';
 import IntroScreen from '../screens/IntroSlider';
-import HomeScreen from '../screens/HomeScreen';
-import TextInputsDemo from '../screens/TextInputsDemo';
+import TextInputsDemo from '../screens/TextInputDemo';
 import ModalDemo from '../screens/ModalDemo';
 import DataRenderingDemo from '../screens/DataRenderingDemo';
+import HomeScreen from '../screens/HomeScreen';
 
 const Stack = createNativeStackNavigator()
 const Navigator = () => {
@@ -23,7 +23,6 @@ const Navigator = () => {
             <Stack.Screen name='textinput' component={TextInputsDemo} />
             <Stack.Screen name='modals' component={ModalDemo} />
             <Stack.Screen name='dataRendering' component={DataRenderingDemo} />
-
         </Stack.Navigator>
     )
 }

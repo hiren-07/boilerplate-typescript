@@ -1,7 +1,7 @@
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text } from 'react-native'
 import React, { useEffect } from 'react'
-import { AppFonts, Colors, ScaleFonts, ScaleSize } from '../helper'
 import AsyncStorage from '@react-native-async-storage/async-storage'
+import { styles } from './style'
 
 const SplashScreen = ({ navigation }: { navigation: any }) => {
     useEffect(() => {
@@ -26,17 +26,4 @@ const SplashScreen = ({ navigation }: { navigation: any }) => {
     )
 }
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: Colors.primary
-    },
-    text: {
-        fontSize: ScaleFonts.SIZE_32,
-        color: Colors.secondary,
-        fontFamily:AppFonts.SemiBold
-    }
-})
 export default SplashScreen

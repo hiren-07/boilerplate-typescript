@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet } from 'react-native'
 import React, { useEffect } from 'react'
 import { useDispatch,useSelector } from 'react-redux'
-import { fetchDataAction } from '../redux/action/fetchDataAction'
+import { fetchDataAction } from '../../redux/action/fetchDataAction'
 
 const DataRenderingDemo = () => {
 
@@ -12,26 +12,12 @@ const DataRenderingDemo = () => {
   useEffect(()=>{
     dispatch(fetchDataAction(page))
   },[])
-
-  // console.log("Loading -> ",loading);
-  // console.log("page -> ",page);
-  // console.log("totalPage -> ",totalPage);
-  // console.log("data -> ",data);
-
   return (
-    <View style={styles.container}>
+    <View>
 
       {/* <Text>DataRenderingDemo</Text> */}
     </View>
   )
 }
-
-const styles = StyleSheet.create({
-    container:{
-        flex:1,
-        justifyContent:'center',
-        alignItems:'center'
-    }
-})
 
 export default DataRenderingDemo

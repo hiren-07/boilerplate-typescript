@@ -1,7 +1,8 @@
 import { View, StyleSheet } from 'react-native';
 import React, { useState } from 'react';
-import { Constants, ScaleSize } from '../helper';
-import { CustomTextInput } from '../components';
+import { Constants, ScaleSize } from '../../helper';
+import { CustomTextInput } from '../../components';
+import { styles } from './style';
 
 const TextInputsDemo = () => {
   const [date, setDate] = useState(new Date());
@@ -20,12 +21,5 @@ const TextInputsDemo = () => {
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    paddingHorizontal: ScaleSize.SPACING_50,
-  },
-});
 
 export default TextInputsDemo;

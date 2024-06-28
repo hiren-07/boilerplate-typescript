@@ -1,11 +1,12 @@
 import { View, Text, StyleSheet, TouchableOpacity, Keyboard, Alert } from 'react-native';
 import React, { useRef, useState } from 'react';
-import { Colors, AppFonts, Strings, ScaleFonts, ScaleSize } from '../helper';
-import { CustomTextInput, Button } from '../components';
-import Utils from '../helper/Utils';
+import { Colors, Strings } from '../../helper';
+import { CustomTextInput, Button } from '../../components';
+import Utils from '../../helper/Utils';
 import { useDispatch, useSelector } from 'react-redux';
-import { authLoginAction } from '../redux/action/authActions';
+import { authLoginAction } from '../../redux/action/authActions';
 import LinearGradient from 'react-native-linear-gradient';
+import { styles } from './style';
 
 const LoginScreen = ({ navigation }: { navigation: any }) => {
 
@@ -95,41 +96,5 @@ const LoginScreen = ({ navigation }: { navigation: any }) => {
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    overflow: 'hidden',
-    justifyContent: 'center',
-    backgroundColor: Colors.primary,
-    paddingHorizontal: ScaleSize.SPACING_50,
-  },
-  signIn: {
-    fontSize: ScaleFonts.SIZE_24,
-    fontFamily: AppFonts.Bold,
-    color: Colors.secondary,
-    marginBottom: ScaleSize.SPACING_40,
-  },
-  forgotPassword: {
-    fontSize: ScaleFonts.SIZE_14,
-    fontFamily: AppFonts.SemiBold,
-    color: Colors.secondary,
-    marginVertical: ScaleSize.SPACING_15,
-  },
-  ButtonView: {
-    marginTop: ScaleSize.SPACING_25,
-    marginBottom: ScaleSize.SPACING_100,
-  },
-  dontHaveAcc: {
-    color: Colors.secondary,
-    textAlign: 'center',
-    fontFamily: AppFonts.Regular,
-    fontSize: ScaleFonts.SIZE_14,
-  },
-  signUp: {
-    color: Colors.ButtonBackground,
-    fontFamily: AppFonts.Bold,
-  },
-});
 
 export default LoginScreen;
-

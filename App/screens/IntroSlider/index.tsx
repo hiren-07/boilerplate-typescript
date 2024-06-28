@@ -1,7 +1,8 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text } from 'react-native';
 import AppIntroSlider from 'react-native-app-intro-slider';
-import { AppFonts, Colors, ScaleFonts, ScaleSize } from '../helper';
+import { Colors } from '../../helper';
+import { styles } from './style';
 
 const data = [
     {
@@ -17,35 +18,6 @@ const data = [
         text: 'Set goals and track your progress towards achieving them.',
     },
 ];
-
-const styles = StyleSheet.create({
-    slide: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: Colors.primary,
-        paddingHorizontal: ScaleSize.SPACING_50,
-    },
-    text: {
-        color: Colors.secondary,
-        textAlign: 'center',
-        fontFamily: AppFonts.Regular,
-    },
-    title: {
-        fontSize: ScaleFonts.SIZE_22,
-        color: Colors.secondary,
-        textAlign: 'center',
-        fontFamily: AppFonts.Regular,
-    },
-    buttonText: {
-        fontSize: ScaleFonts.SIZE_16,
-        color: Colors.secondary,
-        fontFamily: AppFonts.Medium,
-    },
-    button: {
-        padding: ScaleSize.SPACING_10,
-    },
-});
 
 const IntroScreen = ({ navigation }: { navigation: any }) => {
 

@@ -1,7 +1,8 @@
-import { View, Text, StyleSheet, Modal, ActivityIndicator } from 'react-native'
+import { View, Modal, ActivityIndicator } from 'react-native'
 import React from 'react'
-import { Colors, ScaleSize } from '../../helper'
+import { Colors, ScaleSize } from '../../../helper'
 import { useSelector } from 'react-redux'
+import { styles } from './style'
 
 const Loader = (props:any) => {
     const values = useSelector((state:any)=>state.loader)
@@ -14,13 +15,6 @@ const Loader = (props:any) => {
         </Modal>
     )
 }
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: 'rgba(0, 0, 0, 0.5)',
-    },
-})
+
 
 export default Loader
