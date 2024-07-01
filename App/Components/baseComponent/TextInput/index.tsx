@@ -43,8 +43,6 @@ const CustomTextInput = forwardRef((props: iTextInput, ref) => {
   }
 
   return (
-    // <View style={styles.inputView}>
-    // marginVertical: props.error ? ScaleSize.SPACING_5 : ScaleSize.SPACING_15,
     <View style={props.error ? styles.inputView : styles.inputView1}>
       <TouchableOpacity style={inputStyle} onPress={() => handlePress()}>
         {props.leftIcon && (

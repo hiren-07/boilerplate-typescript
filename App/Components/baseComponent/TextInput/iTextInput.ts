@@ -4,7 +4,7 @@ export interface iTextInput {
     type?: any;
     onChangeDate?: any;
     error?: boolean | string;
-    leftIcon: string;
+    leftIcon?: string;
     placeholder?: string;
     enterKeyHint?: string;
     onChangeText?: (text: string) => void;
@@ -14,3 +14,20 @@ export interface iTextInput {
     ispassword?: boolean;
     rightIcon?: string;
 }
+
+// export interface iTextInput {
+//     line?: boolean;
+//     border?: boolean;
+//     type?: string;
+//     onChangeDate?: (date: Date) => void;
+//     error?: boolean | string;
+//     leftIcon?: string;
+//     placeholder?: string;
+//     enterKeyHint?: string;
+//     onChangeText?: (text: string) => void;
+//     onSubmitEditing?: () => void;
+//     keyboardType?: string;
+//     secureTextEntry?: boolean;
+//     ispassword?: boolean;
+//     rightIcon?: string;
+//   }

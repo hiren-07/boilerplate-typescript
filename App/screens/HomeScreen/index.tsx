@@ -9,7 +9,7 @@ import { loader } from '../../redux/action/loaderAction'
 import { styles } from './style';
 
 
-const HomeScreen = ({ navigation }) => {
+const HomeScreen = ({ navigation }:{navigation:any}) => {
 
   const dispatch = useDispatch()
 
@@ -40,7 +40,11 @@ const HomeScreen = ({ navigation }) => {
     })
 
   }
-  
+
+  const goToSettings = () => {
+    navigation.navigate('settings')    
+  }
+
   return (
     <View style={styles.container}>
       <Button title='Text Inputs' onPress={goToTextinput} />
@@ -50,6 +54,8 @@ const HomeScreen = ({ navigation }) => {
       <Button title='Data Rendering' onPress={gotoDataRendering} />
       <View style={{ marginVertical: ScaleSize.SPACING_10 }} />
       <Button title='Logout' onPress={onLogout} />
+      <View style={{ marginVertical: ScaleSize.SPACING_10 }} />
+      <Button title='Settings' onPress={goToSettings} />
     </View>
   )
 }

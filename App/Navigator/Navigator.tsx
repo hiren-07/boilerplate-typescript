@@ -9,6 +9,7 @@ import TextInputsDemo from '../screens/TextInputDemo';
 import ModalDemo from '../screens/ModalDemo';
 import DataRenderingDemo from '../screens/DataRenderingDemo';
 import HomeScreen from '../screens/HomeScreen';
+import SettingScreen from '../screens/SettingScreen';
 
 const Stack = createNativeStackNavigator()
 const Navigator = () => {
@@ -23,6 +24,7 @@ const Navigator = () => {
             <Stack.Screen name='textinput' component={TextInputsDemo} />
             <Stack.Screen name='modals' component={ModalDemo} />
             <Stack.Screen name='dataRendering' component={DataRenderingDemo} />
+            <Stack.Screen name='settings' component={SettingScreen} />
         </Stack.Navigator>
     )
 }
