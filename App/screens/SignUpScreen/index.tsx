@@ -1,22 +1,25 @@
 import { View, Text } from 'react-native'
 import React, { useRef, useState } from 'react'
-import { Colors, Strings } from '../../helper'
+import { Colors } from '../../helper'
 import { CustomTextInput, Button } from '../../components'
 import Utils from '../../helper/Utils'
 import { useDispatch } from 'react-redux'
 import { authSignupAction } from '../../redux/action/authActions'
 import LinearGradient from 'react-native-linear-gradient'
 import { styles } from './style'
+import { useTranslation } from 'react-i18next'
 
 
 const LoginScreen = ({ navigation }: { navigation: any }) => {
 
   const dispatch = useDispatch()
 
-  interface renfrence{
-    ref : any
+  const { t } = useTranslation()
+
+  interface renfrence {
+    ref: any
   }
-  
+
   const [username, setUsername] = useState<string>('')
   const [email, setEmail] = useState<string>('')
   const [mobile, setMobile] = useState<string>('')
@@ -42,28 +45,28 @@ const LoginScreen = ({ navigation }: { navigation: any }) => {
 
     if (Utils.isNull(username)) {
       isValid = false
-      setUserError('Please Enter Username')
+      setUserError(t('str_please_enter_username'))
     }
 
     if (Utils.isNull(email)) {
       isValid = false
-      setEmailError('Please Enter Email Address')
+      setEmailError(t('str_please_enter_email'))
     } else if (!Utils.isEmailValid(email)) {
       isValid = false
-      setEmailError('Invalid Email Address')
+      setEmailError(t('str_invalid_email'))
     }
 
     if (Utils.isNull(mobile)) {
       isValid = false
-      setMobileError('Please Enter Mobile Number')
+      setMobileError(t('str_please_enter_mobile'))
     } else if (!Utils.isPhoneNumberValid(mobile)) {
       isValid = false
-      setMobileError('Invalid Mobile Number')
+      setMobileError(t('str_invalid_mobile_number'))
     }
 
     if (Utils.isNull(password)) {
       isValid = false;
-      setPassError('Please Enter Password')
+      setPassError(t('str_please_enter_password'))
     }
 
     if (isValid) {
@@ -82,11 +85,11 @@ const LoginScreen = ({ navigation }: { navigation: any }) => {
   return (
     <LinearGradient colors={[Colors.gradiant1, Colors.gradiant2, Colors.gradiant3]} style={styles.container}>
 
-      <Text style={styles.signIn}>{Strings.str_signup}</Text>
+      <Text style={styles.signIn}>{t('str_signup')}</Text>
 
       <CustomTextInput
         border={true}
-        placeholder={Strings.str_username}
+        placeholder={t('str_username')}
         enterKeyHint='next'
         onChangeText={(text: any) => { setUsername(text), setUserError(false) }}
         error={userError}
@@ -98,7 +101,7 @@ const LoginScreen = ({ navigation }: { navigation: any }) => {
 
       <CustomTextInput
         border={true}
-        placeholder={Strings.str_mail_id}
+        placeholder={t('str_mail_id')}
         keyboardType='email-address'
         enterKeyHint='next'
         onChangeText={(text: any) => { setEmail(text), setEmailError(false) }}
@@ -112,7 +115,7 @@ const LoginScreen = ({ navigation }: { navigation: any }) => {
 
       <CustomTextInput
         border={true}
-        placeholder={Strings.str_mobile_number}
+        placeholder={t('str_mobile_number')}
         keyboardType='number-pad'
         enterKeyHint='next'
         onChangeText={(text: any) => { setMobile(text), setMobileError(false) }}
@@ -126,7 +129,7 @@ const LoginScreen = ({ navigation }: { navigation: any }) => {
 
       <CustomTextInput
         border={true}
-        placeholder={Strings.str_password}
+        placeholder={t('str_password')}
         enterKeyHint='done'
         secureTextEntry={true}
         onChangeText={(text: any) => { setPassword(text), setPassError(false) }}
@@ -140,13 +143,13 @@ const LoginScreen = ({ navigation }: { navigation: any }) => {
 
       <View style={styles.ButtonView}>
         <Button
-          title={Strings.str_sign_in}
+          title={t('str_sign_in')}
           onPress={handleLogin}
         />
       </View>
 
-      <Text style={styles.dontHaveAcc}>{Strings.str_dont_have_account}
-        <Text style={styles.signUp} onPress={goToSignin}>  {Strings.str_signup}</Text>
+      <Text style={styles.dontHaveAcc}>{t('str_dont_have_account')}
+        <Text style={styles.signUp} onPress={goToSignin}>  {t('str_signup')}</Text>
       </Text>
 
 

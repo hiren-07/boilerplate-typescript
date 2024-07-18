@@ -7,11 +7,13 @@ import { ScaleSize } from '../../helper'
 import { Button } from '../../components';
 import { loader } from '../../redux/action/loaderAction'
 import { styles } from './style';
+import { useTranslation } from "react-i18next";
 
 
-const HomeScreen = ({ navigation }:{navigation:any}) => {
+const HomeScreen = ({ navigation }: { navigation: any }) => {
 
   const dispatch = useDispatch()
+  const { t } = useTranslation();
 
   const goToTextinput = () => {
     navigation.navigate('textinput')
@@ -42,20 +44,23 @@ const HomeScreen = ({ navigation }:{navigation:any}) => {
   }
 
   const goToSettings = () => {
-    navigation.navigate('settings')    
+    navigation.navigate('settings')
   }
 
   return (
     <View style={styles.container}>
-      <Button title='Text Inputs' onPress={goToTextinput} />
+
+      <Button title={t("str_sign_in")} onPress={() => { }} />
       <View style={{ marginVertical: ScaleSize.SPACING_10 }} />
-      <Button title='Modals' onPress={goToModals} />
+      <Button title={t('str_text_inputs')} onPress={goToTextinput} />
       <View style={{ marginVertical: ScaleSize.SPACING_10 }} />
-      <Button title='Data Rendering' onPress={gotoDataRendering} />
+      <Button title={t('str_modals')} onPress={goToModals} />
       <View style={{ marginVertical: ScaleSize.SPACING_10 }} />
-      <Button title='Logout' onPress={onLogout} />
+      <Button title={t('str_data_renderig')} onPress={gotoDataRendering} />
       <View style={{ marginVertical: ScaleSize.SPACING_10 }} />
-      <Button title='Settings' onPress={goToSettings} />
+      <Button title={t('str_logout')} onPress={onLogout} />
+      <View style={{ marginVertical: ScaleSize.SPACING_10 }} />
+      <Button title={t('str_settings')} onPress={goToSettings} />
     </View>
   )
 }

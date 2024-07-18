@@ -3,25 +3,35 @@ import { View, Text } from 'react-native';
 import AppIntroSlider from 'react-native-app-intro-slider';
 import { Colors } from '../../helper';
 import { styles } from './style';
+import { useNavigation } from '@react-navigation/native';
+import { useTranslation } from 'react-i18next';
 
-const data = [
-    {
-        title: 'Welcome to MyApp',
-        text: 'Discover amazing features and enhance your productivity.',
-    },
-    {
-        title: 'Stay Organized',
-        text: 'Keep track of your tasks and manage your time effectively.',
-    },
-    {
-        title: 'Achieve Your Goals',
-        text: 'Set goals and track your progress towards achieving them.',
-    },
-];
 
-const IntroScreen = ({ navigation }: { navigation: any }) => {
 
-    const gotoLogin = () => { navigation.replace('login'); }
+const IntroScreen = () => {
+    const { t } = useTranslation()
+
+    const data = [
+        {
+            title: t("splash_title_one"),
+            text: t("splash_text_one"),
+        },
+        {
+            title: t("splash_title_two"),
+            text: t("splash_text_two"),
+        },
+        {
+            title: t("splash_title_three"),
+            text: t("splash_text_three"),
+        },
+    ];
+
+
+    const navigation = useNavigation()
+    const gotoLogin = () => {
+        console.log("gotoLogin called,  ")
+        navigation.replace('login');
+    }
 
     const renderItem = ({ item }: { item: any }) => (
         <View style={styles.slide}>
@@ -42,9 +52,9 @@ const IntroScreen = ({ navigation }: { navigation: any }) => {
             <AppIntroSlider
                 data={data}
                 renderItem={renderItem}
-                renderNextButton={() => renderButton("Next")}
-                renderSkipButton={() => renderButton("Skip")}
-                renderDoneButton={() => renderButton("Done")}
+                renderNextButton={() => renderButton(t('str_next'))}
+                renderSkipButton={() => renderButton(t('str_skip'))}
+                renderDoneButton={() => renderButton(t('str_done'))}
                 showSkipButton={true}
                 dotStyle={{ backgroundColor: Colors.secondary }}
                 activeDotStyle={{ backgroundColor: Colors.ButtonBackground }}

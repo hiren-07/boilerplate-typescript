@@ -1,17 +1,18 @@
 import { View, Text, TouchableOpacity } from 'react-native';
 import React, { useRef, useState } from 'react';
-import { Colors, Strings } from '../../helper';
+import { Colors } from '../../helper';
 import { CustomTextInput, Button } from '../../components';
 import Utils from '../../helper/Utils';
 import { useDispatch } from 'react-redux';
 import { authLoginAction } from '../../redux/action/authActions';
 import LinearGradient from 'react-native-linear-gradient';
 import { styles } from './style';
+import { useTranslation } from 'react-i18next';
 
 const LoginScreen = ({ navigation }: { navigation: any }) => {
 
   const dispatch = useDispatch()
-
+  
   const [username, setUsername] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const nameRef = useRef<any>(null);
@@ -31,12 +32,12 @@ const LoginScreen = ({ navigation }: { navigation: any }) => {
 
     if (Utils.isNull(username)) {
       isValid = false
-      setUserError('Please Enter Username')
+      setUserError(t('str_please_enter_username'))
     }
 
     if (Utils.isNull(password)) {
       isValid = false;
-      setPassError('Please Enter Password')
+      setPassError(t('str_please_enter_password'))
     }
 
     if (isValid) {
@@ -44,14 +45,15 @@ const LoginScreen = ({ navigation }: { navigation: any }) => {
       dispatch(authLoginAction(body, navigation))
     }
   };
+  const { t } = useTranslation();
 
   return (
     <LinearGradient colors={[Colors.gradiant1, Colors.gradiant2, Colors.gradiant3]} style={styles.container}>
-      <Text style={styles.signIn}>{Strings.str_sign_in}</Text>
+      <Text style={styles.signIn}>{t('str_sign_in')}</Text>
 
       <CustomTextInput
         border={true}
-        placeholder={Strings.str_username}
+        placeholder={t("str_username")}
         enterKeyHint='next'
         onChangeText={(text: string) => {
           setUsername(text)
@@ -65,7 +67,7 @@ const LoginScreen = ({ navigation }: { navigation: any }) => {
 
       <CustomTextInput
         border={true}
-        placeholder={Strings.str_password}
+        placeholder={t("str_password")}
         enterKeyHint='done'
         secureTextEntry={true}
         onChangeText={(text: string) => {
@@ -80,16 +82,16 @@ const LoginScreen = ({ navigation }: { navigation: any }) => {
       />
 
       <TouchableOpacity onPress={goToForgotPassword}>
-        <Text style={styles.forgotPassword}>{Strings.str_forgot_password}</Text>
+        <Text style={styles.forgotPassword}>{t("str_forgot_password")}</Text>
       </TouchableOpacity>
 
       <View style={styles.ButtonView}>
-        <Button title={Strings.str_sign_in} onPress={handleLogin} />
+        <Button title={t("str_sign_in")} onPress={handleLogin} />
       </View>
 
       <Text style={styles.dontHaveAcc}>
-        {Strings.str_dont_have_account}
-        <Text style={styles.signUp} onPress={goToSignup}> {Strings.str_signup}
+        {t("str_dont_have_account")}
+        <Text style={styles.signUp} onPress={goToSignup}> {t("str_signup")}
         </Text>
       </Text>
     </LinearGradient>

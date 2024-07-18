@@ -9,7 +9,7 @@ const SettingScreen = () => {
     return (
         <View style={styles.container}>
 
-            <Text>Dark Moda</Text>
+            <Text>Dark Mode</Text>
             <Switch
                 trackColor={{ false: '#767577', true: '#81b0ff' }}
                 thumbColor={isEnabled ? '#f5dd4b' : '#f4f3f4'}
