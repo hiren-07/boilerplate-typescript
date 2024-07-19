@@ -29,7 +29,6 @@ const IntroScreen = () => {
 
     const navigation = useNavigation()
     const gotoLogin = () => {
-        console.log("gotoLogin called,  ")
         navigation.replace('login');
     }
 

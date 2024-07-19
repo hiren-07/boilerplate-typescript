@@ -47,6 +47,10 @@ const HomeScreen = ({ navigation }: { navigation: any }) => {
     navigation.navigate('settings')
   }
 
+  const goToDatepicker = () =>{
+    navigation.navigate('datepicker')
+  }
+
   return (
     <View style={styles.container}>
 
@@ -61,6 +65,8 @@ const HomeScreen = ({ navigation }: { navigation: any }) => {
       <Button title={t('str_logout')} onPress={onLogout} />
       <View style={{ marginVertical: ScaleSize.SPACING_10 }} />
       <Button title={t('str_settings')} onPress={goToSettings} />
+      <View style={{ marginVertical: ScaleSize.SPACING_10 }} />
+      <Button title={'Date picker'} onPress={goToDatepicker} />
     </View>
   )
 }

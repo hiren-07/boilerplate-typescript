@@ -38,7 +38,7 @@ const CustomTextInput = forwardRef((props: iTextInput, ref) => {
     } else if (type == Constants.INPUT.DROPDOWN) {
       setModalVisible(true)
     } else {
-      console.log("123");
+      // console.log("123");
     }
   }
 

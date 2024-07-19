@@ -10,6 +10,7 @@ import ModalDemo from '../screens/ModalDemo';
 import DataRenderingDemo from '../screens/DataRenderingDemo';
 import HomeScreen from '../screens/HomeScreen';
 import SettingScreen from '../screens/SettingScreen';
+import DatePickerScreen from '../screens/DatePickerModal/DatePickerScreen';
 
 const Stack = createNativeStackNavigator()
 const Navigator = () => {
@@ -25,6 +26,7 @@ const Navigator = () => {
             <Stack.Screen name='modals' component={ModalDemo} />
             <Stack.Screen name='dataRendering' component={DataRenderingDemo} />
             <Stack.Screen name='settings' component={SettingScreen} />
+            <Stack.Screen name='datepicker' component={DatePickerScreen} />
         </Stack.Navigator>
     )
 }
