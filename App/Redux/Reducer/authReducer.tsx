@@ -1,4 +1,4 @@
-import { LOGIN_FAILURE, LOGIN_REQUST, LOGIN_SUCCESS } from "../constant"
+import { LOGIN_FAILURE, LOGIN_REQUST, LOGIN_SUCCESS } from "../Constant/Constant"
 
 const initialState = {
     loading: false

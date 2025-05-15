@@ -1,7 +1,7 @@
-import { View, StyleSheet } from 'react-native';
 import React, { useState } from 'react';
-import { Constants, ScaleSize } from '../../helper';
-import { CustomTextInput } from '../../components';
+import { View } from 'react-native';
+import { CustomTextInput } from '../../Components';
+import { Constants } from '../../Helper';
 import { styles } from './style';
 
 const TextInputsDemo = () => {

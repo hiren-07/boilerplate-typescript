@@ -4,7 +4,7 @@ import { fetchDataReducer } from './fetchDataReducer';
 
 const rootReducer = combineReducers({
     loader,
-    fetchDataReducer:fetchDataReducer
+    fetchDataReducer: fetchDataReducer
 });
 
 export default rootReducer;

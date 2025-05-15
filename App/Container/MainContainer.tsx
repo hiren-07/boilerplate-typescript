@@ -1,28 +1,28 @@
-import { Dimensions, StyleSheet, View, Text } from 'react-native'
-import React from 'react'
-import { Loader } from '../components'
+import React from 'react';
+import { Dimensions, StyleSheet, View } from 'react-native';
+import Loader from '../Components/reduxComponent/Loader';
 
-const { width, height } = Dimensions.get('window')
+const { width } = Dimensions.get('window');
 
-function MainContainer(): JSX.Element {
-    
+const MainContainer = () => {
+
     return (
         <View style={styles.container}>
             <Loader />
         </View>
-    )
-}
+    );
+};
 
-export default MainContainer
+export default MainContainer;
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
         position: 'absolute',
-        backgroundColor:'red',
+        backgroundColor: 'red',
         right: 0,
         left: 0,
         width: width,
         zIndex: 9999,
-    }
-})
+    },
+});

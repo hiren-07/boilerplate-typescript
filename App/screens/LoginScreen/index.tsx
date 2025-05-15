@@ -1,18 +1,19 @@
 import { View, Text, TouchableOpacity } from 'react-native';
 import React, { useRef, useState } from 'react';
-import { Colors } from '../../helper';
-import { CustomTextInput, Button } from '../../components';
-import Utils from '../../helper/Utils';
+import { Colors } from '../../Helper';
+import { CustomTextInput, Button } from '../../Components';
 import { useDispatch } from 'react-redux';
-import { authLoginAction } from '../../redux/action/authActions';
 import LinearGradient from 'react-native-linear-gradient';
 import { styles } from './style';
 import { useTranslation } from 'react-i18next';
+import Utils from '../../Helper/Utils';
+import { AppDispatch } from '../../Redux/Store/Store';
+import { authLoginAction } from '../../Redux/Action/authActions';
 
 const LoginScreen = ({ navigation }: { navigation: any }) => {
 
-  const dispatch = useDispatch()
-  
+  const dispatch = useDispatch<AppDispatch>();
+
   const [username, setUsername] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const nameRef = useRef<any>(null);
@@ -31,18 +32,18 @@ const LoginScreen = ({ navigation }: { navigation: any }) => {
     let isValid = true;
 
     if (Utils.isNull(username)) {
-      isValid = false
-      setUserError(t('str_please_enter_username'))
+      isValid = false;
+      setUserError(t('str_please_enter_username'));
     }
 
     if (Utils.isNull(password)) {
       isValid = false;
-      setPassError(t('str_please_enter_password'))
+      setPassError(t('str_please_enter_password'));
     }
 
     if (isValid) {
-      const body = { username: username, password: password }
-      dispatch(authLoginAction(body, navigation))
+      const body = { username: username, password: password };
+      dispatch(authLoginAction(body, navigation));
     }
   };
   const { t } = useTranslation();
@@ -53,45 +54,45 @@ const LoginScreen = ({ navigation }: { navigation: any }) => {
 
       <CustomTextInput
         border={true}
-        placeholder={t("str_username")}
-        enterKeyHint='next'
+        placeholder={t('str_username')}
+        enterKeyHint="next"
         onChangeText={(text: string) => {
-          setUsername(text)
-          setUserError(false)
+          setUsername(text);
+          setUserError(false);
         }}
         error={userError}
-        leftIcon='account'
+        leftIcon="account"
         ref={nameRef}
         onSubmitEditing={() => passwordRef.current.focus()}
       />
 
       <CustomTextInput
         border={true}
-        placeholder={t("str_password")}
-        enterKeyHint='done'
+        placeholder={t('str_password')}
+        enterKeyHint="done"
         secureTextEntry={true}
         onChangeText={(text: string) => {
           setPassword(text);
           setPassError(false);
         }}
         error={passError}
-        leftIcon='lock'
+        leftIcon="lock"
         ref={passwordRef}
         ispassword={true}
         onSubmitEditing={handleLogin}
       />
 
       <TouchableOpacity onPress={goToForgotPassword}>
-        <Text style={styles.forgotPassword}>{t("str_forgot_password")}</Text>
+        <Text style={styles.forgotPassword}>{t('str_forgot_password')}</Text>
       </TouchableOpacity>
 
       <View style={styles.ButtonView}>
-        <Button title={t("str_sign_in")} onPress={handleLogin} />
+        <Button title={t('str_sign_in')} onPress={handleLogin} />
       </View>
 
       <Text style={styles.dontHaveAcc}>
-        {t("str_dont_have_account")}
-        <Text style={styles.signUp} onPress={goToSignup}> {t("str_signup")}
+        {t('str_dont_have_account')}
+        <Text style={styles.signUp} onPress={goToSignup}> {t('str_signup')}
         </Text>
       </Text>
     </LinearGradient>

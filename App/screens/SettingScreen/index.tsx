@@ -1,6 +1,6 @@
-import { View, Text, Switch } from 'react-native'
-import React, { useState } from 'react'
-import { styles } from './style'
+import { View, Text, Switch } from 'react-native';
+import React, { useState } from 'react';
+import { styles } from './style';
 
 const SettingScreen = () => {
     const [isEnabled, setIsEnabled] = useState(false);
@@ -18,7 +18,7 @@ const SettingScreen = () => {
                 value={isEnabled}
             />
         </View>
-    )
-}
+    );
+};
 
-export default SettingScreen
+export default SettingScreen;

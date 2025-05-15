@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import AppIntroSlider from 'react-native-app-intro-slider';
-import { Colors } from '../../helper';
+import { Colors } from '../../Helper';
 import { styles } from './style';
 import { useNavigation } from '@react-navigation/native';
 import { useTranslation } from 'react-i18next';
@@ -9,28 +9,28 @@ import { useTranslation } from 'react-i18next';
 
 
 const IntroScreen = () => {
-    const { t } = useTranslation()
+    const { t } = useTranslation();
 
     const data = [
         {
-            title: t("splash_title_one"),
-            text: t("splash_text_one"),
+            title: t('splash_title_one'),
+            text: t('splash_text_one'),
         },
         {
-            title: t("splash_title_two"),
-            text: t("splash_text_two"),
+            title: t('splash_title_two'),
+            text: t('splash_text_two'),
         },
         {
-            title: t("splash_title_three"),
-            text: t("splash_text_three"),
+            title: t('splash_title_three'),
+            text: t('splash_text_three'),
         },
     ];
 
 
-    const navigation = useNavigation()
+    const navigation = useNavigation();
     const gotoLogin = () => {
         navigation.replace('login');
-    }
+    };
 
     const renderItem = ({ item }: { item: any }) => (
         <View style={styles.slide}>

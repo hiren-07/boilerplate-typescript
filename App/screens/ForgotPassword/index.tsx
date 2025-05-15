@@ -1,40 +1,40 @@
-import { View, Text, StyleSheet } from 'react-native'
-import React, { useRef, useState } from 'react'
-import { CustomTextInput, Button } from '../../components'
-import Utils from '../../helper/Utils'
-import { useDispatch } from 'react-redux'
-import { forgotPasswordAction } from '../../redux/action/authActions'
-import LinearGradient from 'react-native-linear-gradient'
-import { Colors } from '../../helper'
-import { styles } from './styles'
-import { useTranslation } from 'react-i18next'
+import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { Text, View } from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
+import { useDispatch } from 'react-redux';
+import { Button, CustomTextInput } from '../../Components';
+import Utils from '../../Helper/Utils';
+import { forgotPasswordAction } from '../../Redux/Action/authActions';
+import { styles } from './styles';
+import { Colors } from '../../Helper';
 
 
 const LoginScreen = ({ navigation }: { navigation: any }) => {
 
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
 
-    const { t } = useTranslation()
+    const { t } = useTranslation();
 
-    const [email, setEmail] = useState('')
-    const [emailError, setEmailError] = useState<any>(false)
+    const [email, setEmail] = useState('');
+    const [emailError, setEmailError] = useState<any>(false);
 
     const handleForgotPassword = () => {
         let isValid = true;
 
         if (Utils.isNull(email)) {
-            isValid = false
-            setEmailError(t('str_please_enter_email'))
+            isValid = false;
+            setEmailError(t('str_please_enter_email'));
         } else if (!Utils.isEmailValid(email)) {
-            isValid = false
-            setEmailError(t('str_invalid_email'))
+            isValid = false;
+            setEmailError(t('str_invalid_email'));
         }
 
         if (isValid) {
-            const body = { email: email }
-            dispatch(forgotPasswordAction(body, navigation))
+            const body = { email: email };
+            dispatch(forgotPasswordAction(body, navigation));
         }
-    }
+    };
 
 
     return (
@@ -47,10 +47,10 @@ const LoginScreen = ({ navigation }: { navigation: any }) => {
             <CustomTextInput
                 border={true}
                 placeholder={t('str_mail_id')}
-                enterKeyHint='done'
-                onChangeText={(text: any) => { setEmail(text), setEmailError(false) }}
+                enterKeyHint="done"
+                onChangeText={(text: any) => { setEmail(text), setEmailError(false); }}
                 error={emailError}
-                leftIcon='email-outline'
+                leftIcon="email-outline"
                 onSubmitEditing={handleForgotPassword}
 
             />
@@ -64,9 +64,9 @@ const LoginScreen = ({ navigation }: { navigation: any }) => {
             </View>
 
         </LinearGradient>
-    )
-}
+    );
+};
 
 
 
-export default LoginScreen
+export default LoginScreen;

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { View, Button, TouchableOpacity, Text, StyleSheet } from 'react-native';
-import { CustomModal } from '../../components';
+import { Text, TouchableOpacity, View } from 'react-native';
+import { CustomModal } from '../../Components';
 import { styles } from './style';
 
 const ModalDemo = () => {

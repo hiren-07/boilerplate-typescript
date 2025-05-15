@@ -1,4 +1,4 @@
-import normalize from "./Normalize";
+import normalize from './Normalize';
 
 export const ScaleSize = {
     SPACING_5: normalize(5),

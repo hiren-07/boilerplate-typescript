@@ -1,18 +1,18 @@
-import { StyleSheet } from "react-native";
-import { Colors, AppFonts, ScaleFonts, ScaleSize } from '../../helper'
+import { StyleSheet } from 'react-native';
+import { Colors, AppFonts, ScaleFonts, ScaleSize } from '../../Helper';
 
 export const styles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'center',
         paddingHorizontal: ScaleSize.SPACING_50,
-        backgroundColor: Colors.primary
+        backgroundColor: Colors.primary,
     },
     signIn: {
         fontSize: ScaleFonts.SIZE_24,
         fontFamily: AppFonts.Bold,
         color: Colors.secondary,
-        marginBottom: ScaleSize.SPACING_40
+        marginBottom: ScaleSize.SPACING_40,
     },
     inputAll: {
         paddingVertical: ScaleSize.SPACING_10,
@@ -22,31 +22,31 @@ export const styles = StyleSheet.create({
         color: Colors.secondary,
         marginVertical: ScaleSize.SPACING_15,
         fontFamily: AppFonts.Medium,
-        paddingLeft: ScaleSize.SPACING_15
+        paddingLeft: ScaleSize.SPACING_15,
     },
     forgotPassword: {
         fontSize: ScaleFonts.SIZE_14,
         fontFamily: AppFonts.SemiBold,
         color: Colors.secondary,
-        marginVertical: ScaleSize.SPACING_15
+        marginVertical: ScaleSize.SPACING_15,
     },
     ButtonView: {
         marginTop: ScaleSize.SPACING_50,
-        marginBottom: ScaleSize.SPACING_100
+        marginBottom: ScaleSize.SPACING_100,
     },
     dontHaveAcc: {
         color: Colors.secondary,
         textAlign: 'center',
         fontFamily: AppFonts.Regular,
-        fontSize: ScaleFonts.SIZE_14
+        fontSize: ScaleFonts.SIZE_14,
     },
     signUp: {
         color: Colors.ButtonBackground,
-        fontFamily: AppFonts.Bold
+        fontFamily: AppFonts.Bold,
     },
     description: {
-        color: Colors.secondary
-    }
+        color: Colors.secondary,
+    },
 
 
-})
+});

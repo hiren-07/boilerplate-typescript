@@ -1,5 +1,5 @@
-import { StyleSheet } from "react-native";
-import { AppFonts, Colors, ScaleFonts, ScaleSize } from '../../helper';
+import { StyleSheet } from 'react-native';
+import { AppFonts, Colors, ScaleFonts, ScaleSize } from '../../Helper';
 
 export const styles = StyleSheet.create({
     slide: {

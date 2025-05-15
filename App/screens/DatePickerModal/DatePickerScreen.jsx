@@ -47,7 +47,7 @@
 
 import { View, Text, Button } from 'react-native';
 import React, { useState } from 'react';
-import CDateChangeModal from './';
+import CDateChangeModal from '.';
 
 const DatePickerScreen = () => {
   const [modalVisible, setModalVisible] = useState(false);

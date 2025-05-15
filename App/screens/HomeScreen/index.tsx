@@ -1,36 +1,37 @@
-import { View, Text, StyleSheet } from 'react-native'
-import React from 'react'
-import AsyncStorage from '@react-native-async-storage/async-storage'
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { CommonActions } from '@react-navigation/native';
-import { useDispatch } from 'react-redux'
-import { ScaleSize } from '../../helper'
-import { Button } from '../../components';
-import { loader } from '../../redux/action/loaderAction'
+import React from 'react';
+import { useTranslation } from 'react-i18next';
+import { View } from 'react-native';
+import { useDispatch } from 'react-redux';
+import { Button } from '../../Components';
+import { ScaleSize } from '../../Helper';
+import { loader } from '../../Redux/Reducer/hocReducer';
+import { AppDispatch } from '../../Redux/Store/Store';
 import { styles } from './style';
-import { useTranslation } from "react-i18next";
 
 
 const HomeScreen = ({ navigation }: { navigation: any }) => {
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch<AppDispatch>();
   const { t } = useTranslation();
 
   const goToTextinput = () => {
-    navigation.navigate('textinput')
-  }
+    navigation.navigate('textinput');
+  };
 
   const goToModals = () => {
-    navigation.navigate('modals')
-  }
+    navigation.navigate('modals');
+  };
 
   const gotoDataRendering = () => {
-    navigation.navigate('dataRendering')
-  }
+    navigation.navigate('dataRendering');
+  };
 
   const onLogout = async () => {
-    loader(dispatch, true)
+    loader(dispatch, true);
     await AsyncStorage.clear().then(() => {
-      loader(dispatch, false)
+      loader(dispatch, false);
       navigation.dispatch(
         CommonActions.reset({
           index: 1,
@@ -39,22 +40,22 @@ const HomeScreen = ({ navigation }: { navigation: any }) => {
           ],
         })
       );
-    })
+    });
 
-  }
+  };
 
   const goToSettings = () => {
-    navigation.navigate('settings')
-  }
+    navigation.navigate('settings');
+  };
 
-  const goToDatepicker = () =>{
-    navigation.navigate('datepicker')
-  }
+  const goToDatepicker = () => {
+    navigation.navigate('datepicker');
+  };
 
   return (
     <View style={styles.container}>
 
-      <Button title={t("str_sign_in")} onPress={() => { }} />
+      <Button title={t('str_sign_in')} onPress={() => { }} />
       <View style={{ marginVertical: ScaleSize.SPACING_10 }} />
       <Button title={t('str_text_inputs')} onPress={goToTextinput} />
       <View style={{ marginVertical: ScaleSize.SPACING_10 }} />
@@ -68,8 +69,8 @@ const HomeScreen = ({ navigation }: { navigation: any }) => {
       <View style={{ marginVertical: ScaleSize.SPACING_10 }} />
       <Button title={'Date picker'} onPress={goToDatepicker} />
     </View>
-  )
-}
+  );
+};
 
 
-export default HomeScreen
+export default HomeScreen;

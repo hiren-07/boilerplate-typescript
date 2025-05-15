@@ -1,14 +1,14 @@
-import { NavigationContainer } from "@react-navigation/native";
-import MainContainer from "../container/MainContainer";
-import Navigator from "./Navigator";
+import { NavigationContainer } from '@react-navigation/native';
+import MainContainer from '../Container/MainContainer';
+import Navigator from './Navigator';
 
-const Root =()=>{
-    return(
+const Root = () => {
+    return (
         <NavigationContainer>
             <Navigator />
             <MainContainer />
         </NavigationContainer>
-    )
-}
+    );
+};
 
-export default Root
+export default Root;

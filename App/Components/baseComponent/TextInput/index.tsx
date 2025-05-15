@@ -1,14 +1,14 @@
-import { View, Text, StyleSheet, TextInput, Pressable, Platform, Modal, TouchableOpacity } from 'react-native';
-import React, { forwardRef, useState } from 'react';
 import DateTimePicker from '@react-native-community/datetimepicker';
-import { Colors, ScaleSize, Constants } from '../../../helper';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import moment from 'moment';
-import { styles } from './style';
+import React, { forwardRef, useState } from 'react';
+import { Modal, Platform, Pressable, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import { Colors, Constants, ScaleSize } from '../../../Helper';
 import { iTextInput } from './iTextInput';
+import { styles } from './style';
 
 const CustomTextInput = forwardRef((props: iTextInput, ref) => {
-  const { line, border, type } = props
+  const { line, border, type } = props;
 
   const [visible, setVisible] = useState<boolean>(false);
   const [currentDate, setCurrentDate] = useState<Date>(new Date());
@@ -34,13 +34,13 @@ const CustomTextInput = forwardRef((props: iTextInput, ref) => {
 
   const handlePress = () => {
     if (type == Constants.INPUT.DATE) {
-      setShowPicker(true)
+      setShowPicker(true);
     } else if (type == Constants.INPUT.DROPDOWN) {
-      setModalVisible(true)
+      setModalVisible(true);
     } else {
       // console.log("123");
     }
-  }
+  };
 
   return (
     <View style={props.error ? styles.inputView : styles.inputView1}>
@@ -126,7 +126,7 @@ const CustomTextInput = forwardRef((props: iTextInput, ref) => {
 
         {props.rightIcon && (
           <Pressable style={styles.rightIconView}
-            onPress={() => { setDate(currentDate), props.onChangeDate && props.onChangeDate(currentDate) }} >
+            onPress={() => { setDate(currentDate), props.onChangeDate && props.onChangeDate(currentDate); }} >
             <MaterialCommunityIcons
               name={props.rightIcon}
               color={Colors.secondary}

@@ -1,21 +1,21 @@
-import { View, Text, StyleSheet } from 'react-native'
 import React, { useEffect } from 'react'
-import { useDispatch,useSelector } from 'react-redux'
-import { fetchDataAction } from '../../redux/action/fetchDataAction'
-
+import { Text, View } from 'react-native'
+import { useDispatch, useSelector } from 'react-redux'
+import { fetchDataAction } from '../../Redux/Action/fetchDataAction'
+import { AppDispatch } from '../../Redux/Store/Store'
 const DataRenderingDemo = () => {
 
-  const dispatch = useDispatch()
-  
-  const {loading,page,totalPage,data} = useSelector((state)=>state.fetchDataReducer)
-  
-  useEffect(()=>{
+  const dispatch = useDispatch<AppDispatch>();
+
+  const { page } = useSelector((state) => state.fetchDataReducer)
+
+  useEffect(() => {
     dispatch(fetchDataAction(page))
-  },[])
+  }, [dispatch, page]);
+
   return (
     <View>
-
-      {/* <Text>DataRenderingDemo</Text> */}
+      <Text>asd</Text>
     </View>
   )
 }

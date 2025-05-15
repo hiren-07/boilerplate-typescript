@@ -1,14 +1,15 @@
-import { LOADER } from "../constant";
-export const loader = (dispatch:any,state:any) => dispatch({
+import { LOADER } from '../Constant/Constant';
+
+export const loader = (dispatch: any, state: any) => dispatch({
     type: LOADER,
-    state:state
+    state: state,
 });
-export const LOADER_SHOW = (dispatch:any) => dispatch({
+export const LOADER_SHOW = (dispatch: any) => dispatch({
     type: LOADER,
-    state:true
+    state: true,
 });
-export const LOADER_HIDE = (dispatch:any) => dispatch({
+export const LOADER_HIDE = (dispatch: any) => dispatch({
     type: LOADER,
-    state:false
+    state: false,
 });
 
