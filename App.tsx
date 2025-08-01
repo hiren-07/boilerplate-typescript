@@ -1,14 +1,18 @@
 import React from 'react'
 import { Provider } from 'react-redux'
-import Root from './app/navigator/Root'
-import store from './app/redux/store'
+import { store } from './src/redux/store/Store'
+import Root from './src/navigator/Root'
+import { SafeAreaProvider } from 'react-native-safe-area-context'
 
 
 const App = () => {
   return (
+     
+         <SafeAreaProvider>
       <Provider store={store}>
         <Root />
       </Provider>
+    </SafeAreaProvider>
   )
 }
 
